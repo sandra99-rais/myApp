@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="body">
+    <h2 class="text-center"> Authentification</h2>
+    <br>
+
+    <form #f="ngForm" (ngSubmit)="login(f)">
+      <div class="form-group row">
+        <label  class="col-sm-2 col-form-label">Adresse e-mail:</label>
+        <div class="col-sm-10">
+          <input class="space" ngModel  name="email" type="email" #email="ngModel" class="form-control" required email>
+          <div class="alert-danger" *ngIf="email.touched && email.errors?.required">Le champs e-mail est vide.</div>
+          <div class="alert-danger" *ngIf="email.touched && email.errors?.email">Verifier le format</div>
+
+        </div>
+      </div>  <br>
+      <div class="form-group row">
+        <label  class="col-sm-2 col-form-label">Mot de passe:</label>
+        <div class="col-sm-10">
+          <input ngModel  name="mdp" #password="ngModel" type="password" #email="ngModel"  class="form-control" required minlength="6">
+          <div class="alert-danger" *ngIf="password.touched && password.errors?.required"> le champs mot de passe est vide.</div>
+          <div class="alert-danger" *ngIf="password.touched && password.errors?.minlength">Le mot de passe doit etre > 6</div>
+
+        </div>
+      </div>
+      <br>
+      <div class="text-center">
+        <button class="btn btn-warning" [disabled]="f.invalid "  >Se connecter</button> </div>
+
+
+    </form>
+    </div>
+</div>
+

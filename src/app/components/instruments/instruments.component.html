@@ -1,0 +1,18 @@
+<div class="container">
+  <h2 class="text-center"> Ajout d'un instrument</h2>
+  <br>
+  <div class="text-center">
+  <form #f="ngForm" (ngSubmit)="ajoutinst(f)" >
+
+    <input type="text" placeholder="Nom" ngModel name="nom" class="form-control" required>
+      <br>
+    <input type="number" placeholder="Prix" ngModel name="Prix" class="form-control" required>
+      <br>
+    <input type="file" name="img" #image ngModel required>
+
+    <input type="submit" value="Ajouter" class="btn btn-warning btn-sm" [disabled]="f.invalid">
+  </form>
+  </div>
+</div>
+
+

@@ -1,0 +1,22 @@
+<div clas="body">
+<div class="row">
+  <div class="col col-12 col-md-6 col-lg-3" *ngFor="let instrumentt of instrument ; index as i">
+
+    <div class="card" style="width: 18rem;">
+      <img [src]="instrumentt.photoUrl" class="card-img-top" >
+      <div class="card-body">
+        <h5 class="card-title">{{instrumentt.nom | titlecase}}</h5>
+        <p class="card-text"> {{instrumentt.prix | currency }}</p>
+        <button (click)="ajouteraupanier(i)" class="btn btn-primary" *ngIf="add!==i">Ajouter au panier</button>
+        <div *ngIf="add== i">
+          <input type="number" class="form-control" placeholder="Quantité" #amount>
+          <button  class="btn-primary" (click)="jachete(amount.value)">j'achete</button>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+</div>
